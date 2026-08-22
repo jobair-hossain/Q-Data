@@ -1,49 +1,56 @@
 # Q-Data: Quantum-Ready Cybersecurity Datasets
 
-An interactive, reviewer-facing website for the proposed NSF AI Datasets planning project:
+[View the Q-Data project website](https://jobair-hossain.github.io/Q-Data/)
+
+Q-Data is the public website and planned open-resource repository for the proposed NSF project:
 
 **AIDatasets:Planning: Architecting a Reusable Q-Data Pipeline for Quantum-Ready AI-Enabled Cybersecurity Datasets**
 
-The site explains the scientific gap, Q-Data architecture, NIST TrojAI and EMBER2024 pilots, five readiness gates, four work packages, 24-month timeline, evaluation criteria, community process, governance, collaborative structure, and Impact Readiness Package.
+The project will investigate how established cybersecurity datasets can be transformed into documented, reproducible, and independently reusable data products for quantum and hybrid quantum-classical machine learning.
+
+## Purpose
+
+This website was created to explain the project’s scientific motivation, proposed Q-Data architecture, pilot datasets, planning activities, evaluation criteria, governance approach, community process, and institutional roles.
+
+If funded, the website and repository will document the project’s progress and provide a central location for its public resources. These resources are expected to include:
+
+* the Q-Data specification and dataset-readiness rubric;
+* source-audit reports and security-semantic schemas;
+* reference curation, feature-reduction, and quantum-encoding workflows;
+* benchmark definitions and matched classical and QML evaluation code;
+* metadata templates, conformance tests, and reproducibility guidance;
+* bounded alpha products developed from NIST TrojAI and EMBER2024;
+* governance, contribution, correction, and versioning procedures; and
+* workshop materials, planning findings, and the Impact Readiness Package.
+
+All releases will include appropriate documentation, provenance, limitations, and licensing information. Existing datasets and model artifacts will be redistributed only when permitted by their licenses, access conditions, and security requirements.
 
 > **Funding status.** The Q-Data project is pending funding through NSF Program Solicitation NSF 26-512. Content on this site reflects the proposed program as described in the submitted proposal.
 
-## Publish with GitHub Pages
-
-1. Create a GitHub repository and copy this project into it.
-2. Commit and push the files to the `main` branch.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, select **GitHub Actions** as the source.
-5. The included workflow builds and publishes the site after each push to `main`.
-
-The live URL will normally be:
-
-`https://<github-username>.github.io/<repository-name>/`
-
-## Run locally
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build the static GitHub Pages version
+## Build for GitHub Pages
 
 ```bash
 npm run build:github
 ```
 
-The deployable static files are written to `github-pages/`.
+The static deployment files are generated in `github-pages/`.
 
-## Project structure
+## Deployment
 
-- `app/q-data-site.tsx` — site content and interactivity
-- `app/globals.css` — responsive visual system
-- `github/` — static Vite entry point
-- `public/og.png` — social-sharing image
-- `.github/workflows/deploy-pages.yml` — GitHub Pages deployment
-- `github-pages/` — generated static output after building
+The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds and publishes the website whenever changes are pushed to the `main` branch.
 
-## Before publication
+## Project Structure
 
-If the final repository name differs from `q-data-planning`, update the `metadataBase` value in `app/layout.tsx`. You may also replace the contact or resource links as the proposal develops.
+* `app/q-data-site.tsx` — website content and interactive components
+* `app/globals.css` — layout and responsive visual design
+* `app/layout.tsx` — metadata and document structure
+* `github/` — static-site entry point
+* `public/` — images and public assets
+* `.github/workflows/deploy-pages.yml` — deployment workflow

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jobair-hossain.github.io/q-data-planning/"),
+  metadataBase: new URL("https://jobair-hossain.github.io/Q-Data/"),
   title: "Q-Data | Quantum-Ready Cybersecurity Datasets",
   description:
     "A proposed NSF AI Datasets planning project to define, test, and govern reusable quantum-ready cybersecurity data products.",

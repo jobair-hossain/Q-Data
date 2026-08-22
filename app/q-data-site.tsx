@@ -261,7 +261,7 @@ export default function QDataSite() {
       <section className="team-section section grid-shell" id="team">
         <div className="section-heading split-heading"><div><p className="section-number">09 · Collaborative structure</p><h2>One lead institution, two subaward partners, and clearly separated validation roles.</h2></div><p>The structure follows the solicitation’s restriction on separately submitted collaborative proposals: UCA leads the single proposal, with UALR and TSU participating through subawards.</p></div>
         <div className="team-grid">{team.map((member, index) => <article key={member[0]} className={index === 0 ? "lead" : ""}><div><span>{member[1]}</span><b>0{index + 1}</b></div><h3>{member[0]}</h3><p className="team-people">{member[2]}</p><p>{member[3]}</p></article>)}</div>
-        <div className="student-band"><strong>6+ students</strong><p>Undergraduate and graduate students across UCA, UALR, and TSU will contribute to auditing, cybersecurity review, encoding, conformance testing, documentation, and responsible data stewardship.</p></div>
+        <div className="student-band"><strong>Students</strong><p>Undergraduate and graduate students across UCA, UALR, and TSU will contribute to auditing, cybersecurity review, encoding, conformance testing, documentation, and responsible data stewardship.</p></div>
       </section>
 
       <section className="readiness-package section" id="readiness">

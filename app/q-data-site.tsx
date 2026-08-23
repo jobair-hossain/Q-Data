@@ -178,7 +178,7 @@ export default function QDataSite() {
         <div className="hero-grid grid-shell">
           <div className="hero-copy">
             <p className="eyebrow"><span /> Proposed Planning Grant · NSF 26‑512</p>
-            <h1>Architecting a <em>reusable</em> pipeline from classical cybersecurity data to quantum-ready data products.</h1>
+            <h1>Architecting a <em>reusable</em> reusable Q-Data pipeline for quantum-ready cybersecurity datasets..</h1>
             <p className="hero-lede">Q‑Data will architect and test a reproducible pipeline that connects authoritative cybersecurity datasets to versioned, semantically traceable, resource-aware, and independently reconstructable quantum-ready representations for quantum and hybrid AI workflows.</p>
             <div className="hero-actions"><a className="button primary" href="#architecture">Explore the workflow <ArrowIcon /></a><a className="button secondary" href="#evidence">See how success is measured</a></div>
           </div>

@@ -70,7 +70,7 @@ const pilots = {
     stress:
       "Label leakage, unsafe model loading, architecture variation, trigger type, conditional behavior, and small-sample uncertainty.",
     alpha:
-      "Static structural summaries and standardized behavioral probes will be evaluated with model-level partitions and grouped folds. Configuration fields that reveal poison status remain in the audit manifest but are excluded from predictive views.",
+      "Static structural summaries and standardized behavioral probes will be evaluated using repeated stratified model-level folds, with sensitivity analyses across architecture and trigger conditions. Configuration fields that reveal poison status remain in the audit manifest but are excluded from predictive views.",
   },
   ember: {
     eyebrow: "Pilot 02 · Malware and evasion",
@@ -78,13 +78,13 @@ const pilots = {
     summary:
       "A large, heterogeneous file-record test of whether compressed representations retain malware signals across formats, time, and evasive samples.",
     stats: [
-      ["3.24M", "released records"],
+      ["3.232M", "conventional train/test records"],
       ["6", "file formats"],
       ["6,315", "evasive challenge records"],
       ["≤100K", "bounded alpha cohort"],
     ],
     unit: "Released software or document feature record",
-    task: "Malicious-versus-benign and challenge-set detection",
+    task: "Malicious-versus-benign classification; evasive-malware challenge sensitivity",
     stress:
       "Extreme dimensionality reduction, temporal leakage, format heterogeneity, class imbalance, drift, and access dependencies.",
     alpha:
@@ -103,29 +103,29 @@ const gates = [
 const workPackages = [
   ["WP1", "Months 1–6", "Landscape, audit & requirements", "Audit both sources, map the technical landscape, identify risks, and learn what prospective users need before trusting or reusing an enhanced dataset.", "Dataset landscape · source-audit report · stakeholder-needs report · risk register"],
   ["WP2", "Across both years", "Community design & consensus", "Three working groups and two hybrid workshops resolve choices in security semantics, quantum portability, governance, adoption, and independent reuse.", "Decision log · requirements matrix · workshop reports · unresolved issues"],
-  ["WP3", "Months 7–21", "Specification & architecture", "Create the five-gate readiness rubric, machine-readable metadata schema, backend-neutral architecture, and conformance process.", "Specification v0.5 and v1.0 · rubric · schema · conformance-suite design"],
-  ["WP4", "Months 11–24", "Dual pilots & validation", "Build bounded TrojAI and EMBER2024 alpha products, measure semantic loss and circuit cost, test framework portability, and conduct independent reuse tasks.", "Two alpha releases · adapters · notebooks · resource and limitations reports"],
+  ["WP3", "Months 7–21", "Specification & architecture", "Develop and test a candidate Q-Data planning specification, five-gate readiness rubric, machine-readable schema, backend-neutral architecture, and prototype conformance process.", "Candidate planning specification v0.5 · community-reviewed v1.0 · readiness rubric · schema · prototype conformance suite"],
+  ["WP4", "Months 11–24", "Bounded pilot prototyping & feasibility", "Develop bounded TrojAI and EMBER2024 planning alpha products to test semantic preservation, resource feasibility, framework portability, and independent reuse.", "Two planning alpha products · adapters · reference notebooks · semantic-loss and resource reports · feasibility findings"],
 ];
 
 const timeline = [
   ["1–3", "Establish the evidence base", "Kickoff, source and security audits, landscape scan, working-group formation.", "Source manifests, initial risk register, stakeholder map"],
-  ["4–6", "Define community requirements", "Needs assessment, technical sessions, EMBER cohort design, Workshop 1.", "Fixed pilot plans, community requirements, Workshop 1 report"],
-  ["7–10", "Specify Q-readiness", "Readiness rubric, metadata schema, governance draft, reference architecture.", "Specification v0.5, domain profiles, conformance design"],
-  ["11–14", "Build the first bounded alpha", "TrojAI views and leakage audit; EMBER feature and temporal-leakage audit.", "TrojAI alpha, EMBER cohort, preliminary reports"],
-  ["15–18", "Test across pilots and platforms", "EMBER transformations, matched baselines, cross-platform testing, Workshop 2.", "Two pilot candidates and revised specification"],
-  ["19–21", "Demonstrate independent reuse", "External reuse tests, governance exercise, infrastructure and cost analysis.", "Tester report, v1.0 candidate, sustainment options"],
-  ["22–24", "Synthesize planning evidence", "Final alpha releases, dissemination, and readiness assessment.", "Final specification, dual-pilot releases, Impact Readiness Package"],
+  ["4–6", "Define community requirements", "Needs assessment, technical sessions, EMBER cohort design, and Workshop 1, including community-defined semantic, resource, and usability targets.", "Fixed pilot plans, community requirements, usability target, Workshop 1 report"],
+  ["7–10", "Specify Q-readiness", "Candidate planning specification, readiness rubric, metadata schema, governance draft, and reference architecture.", "Candidate planning specification v0.5, pilot profiles, prototype conformance design"],
+  ["11–14", "Prototype the first bounded alpha", "TrojAI views and leakage audit; EMBER feature and temporal-leakage audit.", "TrojAI planning alpha, EMBER cohort, preliminary reports"],
+  ["15–18", "Test across pilots and platforms", "EMBER transformations, matched baselines, cross-platform testing, and Workshop 2.", "Two planning-alpha candidates and revised candidate specification"],
+  ["19–21", "Demonstrate independent reuse", "External reuse tests, governance exercise, infrastructure and cost analysis.", "Tester report, community-reviewed v1.0 candidate, sustainment options"],
+  ["22–24", "Synthesize planning evidence", "Planning-alpha releases, dissemination, and readiness assessment.", "Community-reviewed planning specification v1.0, prototype Reference Toolkit, planning-alpha releases, Impact Readiness Package"],
 ];
 
 const evaluation = [
-  ["Semantic preservation", "Every released representation includes stratified semantic-loss evidence; failures remain visible."],
-  ["Resource feasibility", "Each released representation satisfies at least one predeclared qubit, gate, depth, shot, and noise profile."],
-  ["Cross-dataset generality", "A mandatory core supports both pilots; necessary differences become named profiles."],
-  ["Reproducibility", "External testers reproduce specified outputs within published tolerances."],
-  ["Portability", "Results agree across Qiskit, PennyLane, and Cirq/TFQ within stated tolerances and uncertainty."],
-  ["Community breadth", "At least 30 participants from at least 10 organizations contribute to the planning process."],
-  ["Community acceptance", "At least 75% acceptance of mandatory fields, with disagreements and minority positions documented."],
-  ["Adoption readiness", "At least five of six external testers complete the reference workflow without live investigator intervention."],
+  ["Semantic preservation", "Thresholds and subgroup-loss limits are predeclared. Every released profile must pass its declared tests; failures remain documented and visible."],
+  ["Resource feasibility", "Each released representation satisfies at least one predeclared resource profile, with qubits, gates, circuit depth, shots, runtime, and noise assumptions reported."],
+  ["Portability", "The canonical representation meets specified exact or sampled numerical tolerances across Qiskit, PennyLane, and Cirq/TensorFlow Quantum."],
+  ["Reproducibility", "Source and output manifests, deterministic builds, environments, random seeds, and regression tests reproduce the declared outputs."],
+  ["Community breadth & acceptance", "At least 50 participants from 20 organizations contribute. Topic-specific mandatory requirements receive at least 75% support from at least 12 relevant respondents across six organizations, with dissent documented."],
+  ["Independent reuse", "At least four of six external testers, spanning both pilots and at least three outside organizations, complete the reference workflow without synchronous investigator assistance."],
+  ["Adoption & usability", "External testing measures completion, time-to-first-success, environment failures, documentation questions, and investigator assistance against a community-defined usability target."],
+  ["Impact readiness", "The participating institutions and external reviewers assess the final requirements, governance, infrastructure, partnerships, risks, cost model, staffing, and evaluation design."],
 ];
 
 const team = [
@@ -178,8 +178,8 @@ export default function QDataSite() {
         <div className="hero-grid grid-shell">
           <div className="hero-copy">
             <p className="eyebrow"><span /> Proposed Planning Grant · NSF 26‑512</p>
-            <h1>From classical data to <em>reusable</em> quantum-ready data products.</h1>
-            <p className="hero-lede">Q‑Data will define, test, and govern a reproducible bridge between established cybersecurity datasets and quantum or hybrid machine-learning workflows.</p>
+            <h1>Architecting a <em>reusable</em> pipeline from classical cybersecurity data to quantum-ready data products.</h1>
+            <p className="hero-lede">Q‑Data will architect and test a reproducible pipeline that connects authoritative cybersecurity datasets to versioned, semantically traceable, resource-aware, and independently reconstructable quantum-ready representations for quantum and hybrid AI workflows.</p>
             <div className="hero-actions"><a className="button primary" href="#architecture">Explore the workflow <ArrowIcon /></a><a className="button secondary" href="#evidence">See how success is measured</a></div>
           </div>
           <aside className="hero-panel" aria-label="Project at a glance">
@@ -197,7 +197,7 @@ export default function QDataSite() {
           <article className="contrast-card muted"><p className="card-label">Common practice</p><h3>Experiment-specific preprocessing</h3><ul><li>Source and transformation history may be incomplete</li><li>Resource assumptions are difficult to compare</li><li>Security meaning can be lost without being measured</li><li>Another team may not reconstruct the representation</li></ul></article>
           <article className="contrast-card highlighted"><p className="card-label">Proposed Q‑Data approach</p><h3>A versioned scientific data product</h3><ul><li>Traceable sources and auditable transformations</li><li>Declared quantum hardware and simulator profiles</li><li>Fixed tasks with matched classical and QML baselines</li><li>Provenance, conformance tests, and governed reuse</li></ul></article>
         </div>
-        <div className="definition-band"><span className="definition-symbol">Q</span><div><p className="card-label">Working definition</p><p>A <strong>Q‑ready data product</strong> is a versioned, independently reusable package connecting an unchanged source dataset to documented transformations, hardware-profiled encodings, fixed benchmarks, provenance, and governance.</p></div><p className="definition-caveat">It is not data stored in qubits, a circuit for one classifier, or a claim of quantum advantage.</p></div>
+        <div className="definition-band"><span className="definition-symbol">Q</span><div><p className="card-label">Working definition</p><p>In this project, <strong>Q‑readiness</strong> is defined as an extension of AI-readiness for reproducible quantum and hybrid AI workflows; it does not imply quantum advantage. A <strong>Q‑ready data product</strong> is a versioned, independently reusable package connecting an authoritative source dataset to documented transformations, hardware-profiled encodings, fixed benchmarks, provenance, and governance.</p></div><p className="definition-caveat">It is not data stored in qubits, a circuit for one classifier, or a claim of quantum advantage.</p></div>
       </section>
 
       <section className="architecture-section section" id="architecture">
@@ -246,8 +246,9 @@ export default function QDataSite() {
       </section>
 
       <section className="community-section section grid-shell">
-        <div className="section-heading split-heading"><div><p className="section-number">07 · Community co-design and adoption</p><h2>Attendance shows reach. Documented work shows commitment.</h2></div><p>Cybersecurity researchers, quantum scientists, data stewards, software developers, infrastructure specialists, educators, and prospective users will decide what the standard must contain.</p></div>
-        <div className="community-metrics"><div><strong>30+</strong><span>unique participants</span></div><div><strong>10+</strong><span>organizations</span></div><div><strong>2</strong><span>hybrid design workshops</span></div><div><strong>6</strong><span>focused virtual sessions</span></div><div><strong>6</strong><span>external reuse testers</span></div><div><strong>3</strong><span>external testing organizations</span></div></div>
+        <div className="section-heading split-heading"><div><p className="section-number">07 · Community co-design and adoption</p><h2>Attendance shows reach. Documented work shows commitment.</h2></div><p>Cybersecurity researchers, quantum scientists, data stewards, software developers, infrastructure specialists, educators, and prospective users will help determine what the candidate Q‑Data specification must contain.</p></div>
+        <div className="community-metrics"><div><strong>50+</strong><span>unique participants</span></div><div><strong>20+</strong><span>organizations</span></div><div><strong>2</strong><span>hybrid design workshops</span></div><div><strong>6</strong><span>focused virtual sessions</span></div><div><strong>6</strong><span>external reuse testers</span></div><div><strong>3</strong><span>external testing organizations</span></div></div>
+        <p className="community-outreach">The 50-participant, 20-organization target represents the active planning cohort, not the full beneficiary community. Participants will be recruited through partner research networks, prior workshop participants, cybersecurity and quantum-computing communities, and direct outreach to researchers who use established security benchmarks. Outreach will extend beyond the funded institutions and the Mid-South, with participation tracked by institution, geography, disciplinary role, and contribution type.</p>
         <div className="working-groups"><article><span>Working group A</span><h3>Security semantics & data integrity</h3><p>Units of analysis, feature meaning, leakage, source integrity, benchmark partitions, and safe artifact handling.</p></article><article><span>Working group B</span><h3>Quantum encoding & portability</h3><p>Encoding alternatives, resource profiles, canonical representations, transpilation, and cross-framework conformance.</p></article><article><span>Working group C</span><h3>Governance, adoption & reuse</h3><p>Documentation, contribution review, corrections, retirement, usability, and independent reproduction.</p></article></div>
       </section>
 
@@ -265,12 +266,12 @@ export default function QDataSite() {
       </section>
 
       <section className="readiness-package section" id="readiness">
-        <div className="grid-shell readiness-grid"><div className="readiness-copy"><p className="section-number">10 · Decision point</p><h2>Evidence to determine whether and how-to scale.</h2><p>The project will consolidate its findings into an Impact Readiness Package documenting whether a larger AI Datasets Impact effort is warranted and, if so, the scope, resources, governance, and evaluation needed to pursue it. The planning work does not presume a future proposal or future NSF support.</p><a className="button primary light-button" href="#resources">Review source resources <ArrowIcon /></a></div><div className="package-list">{["Community-approved scientific and technical requirements", "Final Q‑Data specification and readiness rubric", "Dual-pilot performance, resource, conformance, and adoption evidence", "Governance, stewardship, infrastructure, and staffing alternatives", "Scaling analysis, cost model, partnerships, risks, and dependencies", "Evidence-based scope and evaluation design for a possible Impact project"].map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></div>)}</div></div>
+        <div className="grid-shell readiness-grid"><div className="readiness-copy"><p className="section-number">10 · Decision point</p><h2>Evidence to determine whether and how-to scale.</h2><p>The project will consolidate its findings into an Impact Readiness Package documenting whether a larger AI Datasets Impact effort is warranted and, if so, the scope, resources, governance, and evaluation needed to pursue it. The planning work does not presume a future proposal or future NSF support.</p><a className="button primary light-button" href="#resources">Review source resources <ArrowIcon /></a></div><div className="package-list">{["Community-reviewed scientific and technical requirements", "Community-reviewed Q‑Data planning specification and readiness rubric", "Dual-pilot performance, resource, conformance, independent-reuse, and adoption evidence", "Governance, stewardship, infrastructure, and staffing alternatives", "Scaling analysis, cost model, partnerships, risks, and dependencies", "Evidence-based scope and evaluation design for a possible Impact project"].map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></div>)}</div></div>
       </section>
       
 
       <section className="resources-section section grid-shell" id="resources">
-        <div className="section-heading split-heading"><div><p className="section-number">Selected source resources</p><h2>Project foundations</h2></div><p>The proposal builds on established federal and community datasets while addressing a different need: a reusable, cybersecurity-aware standard for classical-to-quantum enhancement.</p></div>
+        <div className="section-heading split-heading"><div><p className="section-number">Selected source resources</p><h2>Project foundations</h2></div><p>The proposal builds on established federal and community datasets while addressing a different need: a reusable, cybersecurity-aware Q‑Data architecture for classical-to-quantum enhancement.</p></div>
         <div className="resource-links"><a href="https://www.nsf.gov/funding/opportunities/ai-datasets-unlocking-dataset-value-ai-enabled-scientific-discovery/nsf26-512/solicitation" target="_blank" rel="noreferrer"><span>Program</span><strong>NSF 26‑512: AI Datasets</strong><ExternalIcon /></a><a href="https://pages.nist.gov/trojai/docs/image-classification-sep2022.html" target="_blank" rel="noreferrer"><span>Pilot 01</span><strong>NIST TrojAI Round 11</strong><ExternalIcon /></a><a href="https://github.com/FutureComputing4AI/EMBER2024" target="_blank" rel="noreferrer"><span>Pilot 02</span><strong>EMBER2024 repository</strong><ExternalIcon /></a></div>
       </section>
 

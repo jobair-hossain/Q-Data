@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jobair-hossain.github.io/Q-Data/"),
   title: "Q-Data | Quantum-Ready Cybersecurity Datasets",
   description:
-    "A proposed NSF AI Datasets planning project to define, test, and govern reusable quantum-ready cybersecurity data products.",
+  "A proposed NSF AI Datasets Planning project to architect and test a reusable Q-Data pipeline for reproducible quantum-ready cybersecurity data products.",
   keywords: [
     "Q-Data",
     "quantum-ready datasets",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Q-Data | Quantum-Ready Cybersecurity Datasets",
     description:
-      "A proposed NSF planning project connecting classical cybersecurity datasets to reproducible quantum and hybrid machine-learning workflows.",
+      "A proposed NSF Planning project to architect a reusable Q-Data pipeline connecting authoritative cybersecurity datasets to reproducible quantum and hybrid AI workflows.",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Q-Data quantum-ready cybersecurity datasets" }],
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Q-Data | Quantum-Ready Cybersecurity Datasets",
     description:
-      "A proposed NSF planning project for reusable quantum-ready cybersecurity data products.",
+        "A proposed NSF Planning project for a reusable Q-Data pipeline and quantum-ready cybersecurity data products.",
     images: ["/og.png"],
   },
   icons: {

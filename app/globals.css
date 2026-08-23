@@ -172,7 +172,7 @@ p { margin-bottom: 0; }
   line-height: .96;
 } */
 .hero h1 {
-  max-width: 850px;
+  max-width: 780px;
   font-size: clamp(3.5rem, 5.1vw, 5.8rem);
   line-height: .95;
   letter-spacing: -.025em;
